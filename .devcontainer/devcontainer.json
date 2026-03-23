@@ -1,0 +1,33 @@
+{
+  "name": "DappBank ETH (Hardhat)",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": "."
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"        
+      },
+      "extensions": [
+        "juanblanco.solidity",
+        "dbaeumer.vscode-eslint",
+        "dsznajder.es7-react-js-snippets"
+      ]
+    }
+  },
+  "workspaceFolder": "/workspaces/projet_3_dapp_voting",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/projet_3_dapp_voting,type=bind",
+  // "containerEnv": {
+  //   "CHOKIDAR_USEPOLLING": "true",
+  //   "CHOKIDAR_INTERVAL": "100",
+  //   "WATCHPACK_POLLING": "true"
+  // },
+  "runArgs": [
+    "--env", "CHOKIDAR_USEPOLLING=true",
+    "--env", "CHOKIDAR_INTERVAL=100",
+    "--env", "WATCHPACK_POLLING=true",
+    "--env", "NEXT_DISABLE_SWC_WORKER=1"
+  ]
+  // "postCreateCommand": "npm install"
+}
