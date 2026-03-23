@@ -24,7 +24,9 @@ export function Voting({ currentStatus, proposals, currentUserVotedProposalId, o
   const handleVote = async (proposalId: number) => {
     try {
       await vote(proposalId);
-      setTimeout(onVotingUpdate, 1000);
+      if (onVotingUpdate) {
+        setTimeout(onVotingUpdate, 1000);
+      }
     } catch (error) {
       console.error('Erreur lors du vote:', error)
     }
